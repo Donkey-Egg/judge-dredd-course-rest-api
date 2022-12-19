@@ -23,4 +23,4 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: Donkey-Egg/judge-dredd-course-rest-api:latest
+        tags: gregonmac/judge-dredd-course-rest-api:latest
