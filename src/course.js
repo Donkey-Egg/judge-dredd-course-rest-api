@@ -4,10 +4,10 @@ var router = express.Router();
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const fs = require('fs');
+const config = require('./config/config.json')
+const credentials = './config/X509-cert.pem'
 
-const credentials = './src/X509-cert-4164365175652944826.pem'
-
-const client = new MongoClient('mongodb+srv://judge-dredd.53wwue5.mongodb.net/?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority', {
+const client = new MongoClient(config.mongo.connectionString, {
   sslKey: credentials,
   sslCert: credentials,
   serverApi: ServerApiVersion.v1
